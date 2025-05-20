@@ -1,0 +1,184 @@
+{
+  "businesses": [
+    {
+      "id": 1,
+      "locationId": 1,
+      "name": "BuildRight Construction",
+      "description": "Professional construction and demolition services",
+      "contact": {
+        "phone": "555-0101",
+        "email": "info@buildright.com",
+        "website": "www.buildright.com"
+      },
+      "rating": 4.5,
+      "services": ["Construction Waste", "Demolition", "Site Cleanup"],
+      "slug": "buildright-construction",
+      "imageUrl": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800"
+    },
+    {
+      "id": 2,
+      "locationId": 7,
+      "name": "Green Valley Waste Solutions",
+      "description": "Residential waste management specialists",
+      "contact": {
+        "phone": "555-0102",
+        "email": "contact@greenvalley.com",
+        "website": "www.greenvalley.com"
+      },
+      "rating": 4.8,
+      "services": ["Home Cleanup", "Renovation Waste", "Yard Waste"],
+      "slug": "green-valley-waste-solutions",
+      "imageUrl": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800"
+    },
+    {
+      "id": 3,
+      "locationId": 13,
+      "name": "Corporate Waste Management",
+      "description": "Commercial waste solutions for businesses",
+      "contact": {
+        "phone": "555-0103",
+        "email": "info@corporatewaste.com",
+        "website": "www.corporatewaste.com"
+      },
+      "rating": 4.6,
+      "services": ["Business Waste", "Recycling", "Document Shredding"],
+      "slug": "corporate-waste-management",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800"
+    },
+    {
+      "id": 4,
+      "locationId": 19,
+      "name": "Roll-Off Experts",
+      "description": "Specialized roll-off dumpster services",
+      "contact": {
+        "phone": "555-0104",
+        "email": "service@rolloffexperts.com",
+        "website": "www.rolloffexperts.com"
+      },
+      "rating": 4.7,
+      "services": ["Roll-Off Rental", "Waste Transport", "Recycling"],
+      "slug": "roll-off-experts",
+      "imageUrl": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800"
+    },
+    {
+      "id": 5,
+      "locationId": 25,
+      "name": "Safe Waste Disposal",
+      "description": "Hazardous waste management specialists",
+      "contact": {
+        "phone": "555-0105",
+        "email": "info@safewaste.com",
+        "website": "www.safewaste.com"
+      },
+      "rating": 4.9,
+      "services": ["Hazardous Waste", "Chemical Disposal", "Biohazard Cleanup"],
+      "slug": "safe-waste-disposal",
+      "imageUrl": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800"
+    },
+    {
+      "id": 6,
+      "locationId": 31,
+      "name": "Event Waste Solutions",
+      "description": "Specialized waste management for events",
+      "contact": {
+        "phone": "555-0106",
+        "email": "events@wastesolutions.com",
+        "website": "www.eventwaste.com"
+      },
+      "rating": 4.7,
+      "services": ["Event Cleanup", "Festival Waste", "Temporary Dumpsters"],
+      "slug": "event-waste-solutions",
+      "imageUrl": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800"
+    },
+    {
+      "id": 7,
+      "locationId": 2,
+      "name": "Westside Demolition",
+      "description": "Full-service demolition and waste removal",
+      "contact": {
+        "phone": "555-0107",
+        "email": "info@westsidedemo.com",
+        "website": "www.westsidedemo.com"
+      },
+      "rating": 4.4,
+      "services": ["Demolition", "Construction Waste", "Site Preparation"],
+      "slug": "westside-demolition",
+      "imageUrl": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800"
+    },
+    {
+      "id": 8,
+      "locationId": 8,
+      "name": "Sunset Cleanup Services",
+      "description": "Residential cleanup and waste removal",
+      "contact": {
+        "phone": "555-0108",
+        "email": "service@sunsetcleanup.com",
+        "website": "www.sunsetcleanup.com"
+      },
+      "rating": 4.6,
+      "services": ["Home Cleanup", "Junk Removal", "Yard Waste"],
+      "slug": "sunset-cleanup-services",
+      "imageUrl": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800"
+    },
+    {
+      "id": 9,
+      "locationId": 14,
+      "name": "Industrial Waste Solutions",
+      "description": "Industrial waste management and recycling",
+      "contact": {
+        "phone": "555-0109",
+        "email": "info@industrialwaste.com",
+        "website": "www.industrialwaste.com"
+      },
+      "rating": 4.5,
+      "services": ["Industrial Waste", "Recycling", "Waste Transport"],
+      "slug": "industrial-waste-solutions",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800"
+    },
+    {
+      "id": 10,
+      "locationId": 20,
+      "name": "Flexible Waste Management",
+      "description": "Adaptable waste solutions for all needs",
+      "contact": {
+        "phone": "555-0110",
+        "email": "contact@flexiblewaste.com",
+        "website": "www.flexiblewaste.com"
+      },
+      "rating": 4.7,
+      "services": ["Custom Solutions", "Waste Collection", "Recycling"],
+      "slug": "flexible-waste-management",
+      "imageUrl": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800"
+    },
+    {
+      "id": 11,
+      "locationId": 26,
+      "name": "Medical Waste Experts",
+      "description": "Specialized medical waste disposal",
+      "contact": {
+        "phone": "555-0111",
+        "email": "info@medicalwaste.com",
+        "website": "www.medicalwaste.com"
+      },
+      "rating": 4.8,
+      "services": ["Medical Waste", "Biohazard", "Sharps Disposal"],
+      "slug": "medical-waste-experts",
+      "imageUrl": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800"
+    },
+    {
+      "id": 12,
+      "locationId": 32,
+      "name": "Concert Cleanup Pros",
+      "description": "Event waste management specialists",
+      "contact": {
+        "phone": "555-0112",
+        "email": "events@concertcleanup.com",
+        "website": "www.concertcleanup.com"
+      },
+      "rating": 4.6,
+      "services": ["Event Cleanup", "Venue Services", "Waste Management"],
+      "slug": "concert-cleanup-pros",
+      "imageUrl": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800"
+    }
+  ]
+} 

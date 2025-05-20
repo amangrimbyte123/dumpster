@@ -1,0 +1,364 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "name": "Downtown Construction Zone",
+      "address": "123 Main St, Downtown",
+      "coordinates": {"lat": 40.7128, "lng": -74.0060},
+      "availableDumpsters": 5,
+      "slug": "downtown-construction-zone",
+      "imageUrl": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "name": "Westside Development",
+      "address": "456 West Ave, Westside",
+      "coordinates": {"lat": 40.7589, "lng": -73.9851},
+      "availableDumpsters": 3,
+      "slug": "westside-development",
+      "imageUrl": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "name": "Eastside Renovation",
+      "address": "789 East Blvd, Eastside",
+      "coordinates": {"lat": 40.7282, "lng": -73.7949},
+      "availableDumpsters": 4,
+      "slug": "eastside-renovation",
+      "imageUrl": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "name": "Northside Project",
+      "address": "321 North Rd, Northside",
+      "coordinates": {"lat": 40.7829, "lng": -73.9654},
+      "availableDumpsters": 2,
+      "slug": "northside-project",
+      "imageUrl": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "name": "Southside Construction",
+      "address": "654 South St, Southside",
+      "coordinates": {"lat": 40.7128, "lng": -74.0060},
+      "availableDumpsters": 6,
+      "slug": "southside-construction",
+      "imageUrl": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 6,
+      "categoryId": 1,
+      "name": "Central Development",
+      "address": "987 Center Ave, Central",
+      "coordinates": {"lat": 40.7589, "lng": -73.9851},
+      "availableDumpsters": 4,
+      "slug": "central-development",
+      "imageUrl": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 7,
+      "categoryId": 2,
+      "name": "Green Valley Homes",
+      "address": "111 Valley Rd, Green Valley",
+      "coordinates": {"lat": 40.7282, "lng": -73.7949},
+      "availableDumpsters": 3,
+      "slug": "green-valley-homes",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 8,
+      "categoryId": 2,
+      "name": "Sunset Residential",
+      "address": "222 Sunset Blvd, Sunset",
+      "coordinates": {"lat": 40.7829, "lng": -73.9654},
+      "availableDumpsters": 5,
+      "slug": "sunset-residential",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 9,
+      "categoryId": 2,
+      "name": "Meadow View Estates",
+      "address": "333 Meadow Ln, Meadow View",
+      "coordinates": {"lat": 40.7128, "lng": -74.0060},
+      "availableDumpsters": 4,
+      "slug": "meadow-view-estates",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 10,
+      "categoryId": 2,
+      "name": "Pine Grove Homes",
+      "address": "444 Pine St, Pine Grove",
+      "coordinates": {"lat": 40.7589, "lng": -73.9851},
+      "availableDumpsters": 3,
+      "slug": "pine-grove-homes",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 11,
+      "categoryId": 2,
+      "name": "Oak Ridge Community",
+      "address": "555 Oak Dr, Oak Ridge",
+      "coordinates": {"lat": 40.7282, "lng": -73.7949},
+      "availableDumpsters": 6,
+      "slug": "oak-ridge-community",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 12,
+      "categoryId": 2,
+      "name": "Cedar Heights",
+      "address": "666 Cedar Ave, Cedar Heights",
+      "coordinates": {"lat": 40.7829, "lng": -73.9654},
+      "availableDumpsters": 4,
+      "slug": "cedar-heights",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 13,
+      "categoryId": 3,
+      "name": "Business District Center",
+      "address": "777 Business Ave, Downtown",
+      "coordinates": {"lat": 40.7128, "lng": -74.0060},
+      "availableDumpsters": 8,
+      "slug": "business-district-center",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 14,
+      "categoryId": 3,
+      "name": "Industrial Park",
+      "address": "888 Industry Rd, Industrial Zone",
+      "coordinates": {"lat": 40.7589, "lng": -73.9851},
+      "availableDumpsters": 10,
+      "slug": "industrial-park",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 15,
+      "categoryId": 3,
+      "name": "Shopping Mall Complex",
+      "address": "999 Mall Blvd, Shopping District",
+      "coordinates": {"lat": 40.7282, "lng": -73.7949},
+      "availableDumpsters": 6,
+      "slug": "shopping-mall-complex",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 16,
+      "categoryId": 3,
+      "name": "Office Park",
+      "address": "101 Office Dr, Business Park",
+      "coordinates": {"lat": 40.7829, "lng": -73.9654},
+      "availableDumpsters": 5,
+      "slug": "office-park",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 17,
+      "categoryId": 3,
+      "name": "Retail Plaza",
+      "address": "202 Retail St, Shopping Center",
+      "coordinates": {"lat": 40.7128, "lng": -74.0060},
+      "availableDumpsters": 4,
+      "slug": "retail-plaza",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 18,
+      "categoryId": 3,
+      "name": "Warehouse District",
+      "address": "303 Warehouse Ave, Industrial Area",
+      "coordinates": {"lat": 40.7589, "lng": -73.9851},
+      "availableDumpsters": 7,
+      "slug": "warehouse-district",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 19,
+      "categoryId": 4,
+      "name": "Roll-Off Center",
+      "address": "404 Roll-Off Rd, Service Center",
+      "coordinates": {"lat": 40.7282, "lng": -73.7949},
+      "availableDumpsters": 12,
+      "slug": "roll-off-center",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 20,
+      "categoryId": 4,
+      "name": "Flexible Waste Solutions",
+      "address": "505 Flex St, Service Area",
+      "coordinates": {"lat": 40.7829, "lng": -73.9654},
+      "availableDumpsters": 8,
+      "slug": "flexible-waste-solutions",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 21,
+      "categoryId": 4,
+      "name": "Multi-Purpose Yard",
+      "address": "606 Multi Ave, Service Zone",
+      "coordinates": {"lat": 40.7128, "lng": -74.0060},
+      "availableDumpsters": 10,
+      "slug": "multi-purpose-yard",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 22,
+      "categoryId": 4,
+      "name": "Versatile Waste Center",
+      "address": "707 Versatile Rd, Service District",
+      "coordinates": {"lat": 40.7589, "lng": -73.9851},
+      "availableDumpsters": 6,
+      "slug": "versatile-waste-center",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 23,
+      "categoryId": 4,
+      "name": "Adaptable Solutions",
+      "address": "808 Adapt Blvd, Service Area",
+      "coordinates": {"lat": 40.7282, "lng": -73.7949},
+      "availableDumpsters": 9,
+      "slug": "adaptable-solutions",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 24,
+      "categoryId": 4,
+      "name": "Dynamic Waste Center",
+      "address": "909 Dynamic Dr, Service Zone",
+      "coordinates": {"lat": 40.7829, "lng": -73.9654},
+      "availableDumpsters": 7,
+      "slug": "dynamic-waste-center",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 25,
+      "categoryId": 5,
+      "name": "Hazardous Waste Facility",
+      "address": "111 Hazard Rd, Special Zone",
+      "coordinates": {"lat": 40.7128, "lng": -74.0060},
+      "availableDumpsters": 4,
+      "slug": "hazardous-waste-facility",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 26,
+      "categoryId": 5,
+      "name": "Medical Waste Center",
+      "address": "222 Medical Ave, Special Area",
+      "coordinates": {"lat": 40.7589, "lng": -73.9851},
+      "availableDumpsters": 3,
+      "slug": "medical-waste-center",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 27,
+      "categoryId": 5,
+      "name": "Chemical Disposal Site",
+      "address": "333 Chemical Blvd, Special Zone",
+      "coordinates": {"lat": 40.7282, "lng": -73.7949},
+      "availableDumpsters": 5,
+      "slug": "chemical-disposal-site",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 28,
+      "categoryId": 5,
+      "name": "Biohazard Center",
+      "address": "444 Bio Rd, Special Area",
+      "coordinates": {"lat": 40.7829, "lng": -73.9654},
+      "availableDumpsters": 3,
+      "slug": "biohazard-center",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 29,
+      "categoryId": 5,
+      "name": "Special Waste Facility",
+      "address": "555 Special St, Special Zone",
+      "coordinates": {"lat": 40.7128, "lng": -74.0060},
+      "availableDumpsters": 4,
+      "slug": "special-waste-facility",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 30,
+      "categoryId": 5,
+      "name": "Industrial Waste Center",
+      "address": "666 Industrial Ave, Special Area",
+      "coordinates": {"lat": 40.7589, "lng": -73.9851},
+      "availableDumpsters": 6,
+      "slug": "industrial-waste-center",
+      "imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 31,
+      "categoryId": 6,
+      "name": "Festival Grounds",
+      "address": "777 Festival Rd, Event Zone",
+      "coordinates": {"lat": 40.7282, "lng": -73.7949},
+      "availableDumpsters": 15,
+      "slug": "festival-grounds",
+      "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 32,
+      "categoryId": 6,
+      "name": "Concert Venue",
+      "address": "888 Concert Blvd, Event Area",
+      "coordinates": {"lat": 40.7829, "lng": -73.9654},
+      "availableDumpsters": 10,
+      "slug": "concert-venue",
+      "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 33,
+      "categoryId": 6,
+      "name": "Sports Complex",
+      "address": "999 Sports Dr, Event Zone",
+      "coordinates": {"lat": 40.7128, "lng": -74.0060},
+      "availableDumpsters": 12,
+      "slug": "sports-complex",
+      "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 34,
+      "categoryId": 6,
+      "name": "Exhibition Center",
+      "address": "101 Exhibit St, Event Area",
+      "coordinates": {"lat": 40.7589, "lng": -73.9851},
+      "availableDumpsters": 8,
+      "slug": "exhibition-center",
+      "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 35,
+      "categoryId": 6,
+      "name": "Fairgrounds",
+      "address": "202 Fair Rd, Event Zone",
+      "coordinates": {"lat": 40.7282, "lng": -73.7949},
+      "availableDumpsters": 20,
+      "slug": "fairgrounds",
+      "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": 36,
+      "categoryId": 6,
+      "name": "Convention Center",
+      "address": "303 Convention Ave, Event Area",
+      "coordinates": {"lat": 40.7829, "lng": -73.9654},
+      "availableDumpsters": 15,
+      "slug": "convention-center",
+      "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    }
+  ]
+}
