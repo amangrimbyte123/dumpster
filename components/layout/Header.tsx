@@ -31,7 +31,7 @@ const Header = () => {
           <Link href="/" className="text-text hover:text-primary transition-colors">
             Home
           </Link>
-          <Link href="/category" className="text-text hover:text-primary transition-colors">
+          <Link href="/categories" className="text-text hover:text-primary transition-colors">
             Categories
           </Link>
           <Link href="/locations" className="text-text hover:text-primary transition-colors">
