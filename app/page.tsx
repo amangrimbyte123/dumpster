@@ -1,12 +1,13 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import fs from 'fs';
 import path from 'path';
-import categoriesData from '../example_data/Categories.json';
 import HeroSection from './components/home/HeroSection';
 import CategorySection from './components/home/CategorySection';
 import BusinessSection from './components/home/BusinessSection';
 import WhyChooseUsSection from './components/home/WhyChooseUsSection';
+import TopLocationsSection from './components/home/TopLocationsSection';
+import HowItWorksSection from './components/home/HowItWorksSection';
+import BookSection from './components/home/BookSection';
+import FAQSection from './components/home/FAQSection';
 
 interface Category {
   id: number;
@@ -39,7 +40,11 @@ export default function Home() {
     <main>
       <HeroSection />
       <CategorySection />
+      <HowItWorksSection />
+      <BookSection />
+      <TopLocationsSection />
       <WhyChooseUsSection />
+      <FAQSection />
       <BusinessSection />
     </main>
   );
