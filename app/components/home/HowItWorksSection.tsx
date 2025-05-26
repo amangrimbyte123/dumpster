@@ -25,21 +25,21 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4">How It Works</h2>
-        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">How It Works</h2>
+        <p className="text-text/80 text-center mb-12 max-w-2xl mx-auto">
           Getting started with our dumpster rental service is simple and straightforward. Follow these easy steps to get your project rolling.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
-            <div key={index} className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <step.icon className="w-8 h-8 text-blue-600" />
+            <div key={index} className="text-center group">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                <step.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-primary group-hover:text-primary/90 transition-colors">{step.title}</h3>
+              <p className="text-text/80">{step.description}</p>
             </div>
           ))}
         </div>

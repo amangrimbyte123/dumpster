@@ -11,8 +11,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#2563EB', // Royal Blue
-        secondary: '#10B981', // Emerald
+        primary: '#006400',
+        secondary: '#7FB17F',
         accent: '#8B5CF6', // Purple
         background: '#F9FAFB', // Light Gray
         'dark-background': '#111827', // Dark Slate

@@ -15,17 +15,24 @@ const BusinessSection = () => {
   }, {} as Record<number, string>);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gradient-to-b from-background via-secondary/5 to-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4">Featured Businesses</h2>
-        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          Discover our trusted partners in waste management and dumpster services
-        </p>
+        <div className="text-center mb-12">
+          <div className="inline-block mb-4">
+            <span className="inline-block px-4 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+              Our Partners
+            </span>
+          </div>
+          <h2 className="text-4xl font-bold text-primary mb-4">Featured Businesses</h2>
+          <p className="text-text/80 max-w-2xl mx-auto">
+            Discover our trusted partners in waste management and dumpster services
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {businesses.map((business) => (
             <div
               key={business.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-primary/10 hover:border-primary/30"
             >
               <div className="relative h-48 bg-gray-200">
                 <Image
@@ -37,29 +44,29 @@ const BusinessSection = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-semibold">{business.name}</h3>
+                  <h3 className="text-xl font-semibold text-primary group-hover:text-primary/90">{business.name}</h3>
                   <div className="flex items-center">
-                    <FaStar className="text-yellow-400 mr-1" />
-                    <span className="font-semibold">{business.rating}</span>
+                    <FaStar className="text-accent mr-1" />
+                    <span className="font-semibold text-primary">{business.rating}</span>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4">{business.description}</p>
+                <p className="text-text/70 mb-4">{business.description}</p>
                 <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-600">
-                    <FaPhone className="mr-2" />
+                  <div className="flex items-center text-text/70">
+                    <FaPhone className="mr-2 text-secondary" />
                     <span>{business.contact.phone}</span>
                   </div>
-                  <div className="flex items-center text-gray-600">
-                    <FaEnvelope className="mr-2" />
+                  <div className="flex items-center text-text/70">
+                    <FaEnvelope className="mr-2 text-secondary" />
                     <span>{business.contact.email}</span>
                   </div>
-                  <div className="flex items-center text-gray-600">
-                    <FaGlobe className="mr-2" />
+                  <div className="flex items-center text-text/70">
+                    <FaGlobe className="mr-2 text-secondary" />
                     <Link 
                       href={`https://${business.contact.website}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 hover:underline"
+                      className="text-primary hover:text-primary/90 hover:underline"
                     >
                       {business.contact.website}
                     </Link>
@@ -69,7 +76,7 @@ const BusinessSection = () => {
                   {business.services.map((service, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                      className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm"
                     >
                       {service}
                     </span>
@@ -78,7 +85,7 @@ const BusinessSection = () => {
                 <div className="mt-4">
                   <Link
                     href={`/construction-dumpsters/${locationSlugMap[business.locationId]}/${business.slug}`}
-                    className="inline-flex items-center justify-center w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                    className="inline-flex items-center justify-center w-full px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
                     View Details
                   </Link>

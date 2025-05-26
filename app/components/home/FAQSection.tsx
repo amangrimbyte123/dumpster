@@ -43,11 +43,16 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gradient-to-b from-background via-accent/5 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="inline-block mb-4">
+            <span className="inline-block px-4 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">
+              FAQ
+            </span>
+          </div>
+          <h2 className="text-3xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
+          <p className="text-text/80 max-w-2xl mx-auto">
             Find answers to common questions about our dumpster rental services. Can't find what you're looking for? Contact us directly.
           </p>
         </div>
@@ -56,15 +61,15 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="mb-4 bg-white rounded-lg shadow-sm overflow-hidden"
+              className="mb-4 bg-white rounded-lg shadow-lg overflow-hidden border border-primary/10 hover:border-primary/30 transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-primary/5 transition-colors"
               >
-                <span className="font-semibold text-gray-900">{faq.question}</span>
+                <span className="font-semibold text-primary">{faq.question}</span>
                 <FaChevronDown
-                  className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${
+                  className={`w-5 h-5 text-secondary transition-transform duration-300 ${
                     openIndex === index ? 'transform rotate-180' : ''
                   }`}
                 />
@@ -77,7 +82,7 @@ export default function FAQSection() {
                     : 'max-h-0 opacity-0'
                 }`}
               >
-                <p className="text-gray-600">{faq.answer}</p>
+                <p className="text-text/70">{faq.answer}</p>
               </div>
             </div>
           ))}
@@ -85,10 +90,10 @@ export default function FAQSection() {
 
         {/* Contact CTA */}
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">Still have questions?</p>
+          <p className="text-text/70 mb-4">Still have questions?</p>
           <a
             href="/contact"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Contact Us
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

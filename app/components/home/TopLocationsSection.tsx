@@ -24,11 +24,11 @@ export default function TopLocationsSection() {
   const locations = getLocations();
 
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-16 bg-gradient-to-b from-background via-primary/5 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Top 10 Locations</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-primary">Top 10 Locations</h2>
+          <p className="text-text/80 max-w-2xl mx-auto">
             Discover our most popular dumpster rental locations. Each location is carefully selected to serve your needs efficiently.
           </p>
         </div>
@@ -37,10 +37,10 @@ export default function TopLocationsSection() {
           {locations.map((location: Location, index: number) => (
             <div 
               key={location.id}
-              className="group relative flex items-center gap-4 p-4 bg-white rounded-lg border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg"
+              className="group relative flex items-center gap-4 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
             >
               {/* Location Number */}
-              <div className="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold text-lg">
+              <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-lg">
                 {index + 1}
               </div>
 
@@ -56,15 +56,15 @@ export default function TopLocationsSection() {
 
               {/* Location Info */}
               <div className="flex-grow min-w-0">
-                <h3 className="text-lg font-semibold mb-1 group-hover:text-blue-600 transition-colors truncate">
+                <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors truncate">
                   {location.name}
                 </h3>
-                <div className="flex items-center text-gray-600 mb-1 text-sm">
-                  <FaMapMarkerAlt className="mr-2 text-red-500 flex-shrink-0" />
+                <div className="flex items-center text-text/70 mb-1 text-sm">
+                  <FaMapMarkerAlt className="mr-2 text-secondary flex-shrink-0" />
                   <span className="truncate">{location.address}</span>
                 </div>
-                <div className="flex items-center text-gray-600 text-sm">
-                  <FaDumpster className="mr-2 text-green-500 flex-shrink-0" />
+                <div className="flex items-center text-text/70 text-sm">
+                  <FaDumpster className="mr-2 text-accent flex-shrink-0" />
                   <span>{location.availableDumpsters} dumpsters available</span>
                 </div>
               </div>
@@ -73,7 +73,7 @@ export default function TopLocationsSection() {
               <div className="flex-shrink-0">
                 <Link
                   href={`/locations/${location.slug}`}
-                  className="inline-flex items-center px-3 py-1.5 bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100 transition-colors text-sm"
+                  className="inline-flex items-center px-3 py-1.5 bg-primary/10 text-primary rounded-full hover:bg-primary/20 transition-colors text-sm"
                 >
                   View
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@ export default function TopLocationsSection() {
               </div>
 
               {/* Hover Effect Line */}
-              <div className="absolute bottom-0 left-0 w-0 h-1 bg-blue-500 group-hover:w-full transition-all duration-300"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-300"></div>
             </div>
           ))}
         </div>
@@ -92,7 +92,7 @@ export default function TopLocationsSection() {
         <div className="text-center mt-8">
           <Link
             href="/locations"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
           >
             View All Locations
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaUsers, FaClock, FaProjectDiagram, FaStar } from 'react-icons/fa';
 
 const HeroSection = () => {
   return (
@@ -30,7 +31,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
             >
               <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
-                <span className="block text-blue-400">Professional</span>
+                <span className="block text-primary">Professional</span>
                 Dumpster Rental Services
               </h1>
               <p className="mb-8 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
@@ -42,13 +43,13 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                 <Link
                   href="/contact"
-                  className="w-full sm:w-auto rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-blue-700 hover:scale-105 shadow-lg"
+                  className="w-full sm:w-auto rounded-full bg-gradient-to-r from-primary to-primary/90 px-8 py-4 text-lg font-semibold text-white transition-all hover:from-primary/90 hover:to-primary/80 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Get a Free Quote
                 </Link>
                 <Link
                   href="/services"
-                  className="w-full sm:w-auto rounded-full border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white hover:text-black"
+                  className="w-full sm:w-auto rounded-full border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white hover:text-primary"
                 >
                   View Services
                 </Link>
@@ -56,21 +57,40 @@ const HeroSection = () => {
 
               {/* Trust Indicators */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">500+</div>
-                  <div className="text-sm text-gray-300">Happy Customers</div>
+                {/* Happy Customers */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300">
+                  <div className="flex flex-col items-center">
+                    <FaUsers className="w-8 h-8 text-primary mb-2" />
+                    <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">500+</div>
+                    <div className="text-sm text-gray-300">Happy Customers</div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">24/7</div>
-                  <div className="text-sm text-gray-300">Support</div>
+
+                {/* 24/7 Support */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300">
+                  <div className="flex flex-col items-center">
+                    <FaClock className="w-8 h-8 text-secondary mb-2" />
+                    <div className="text-3xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">24/7</div>
+                    <div className="text-sm text-gray-300">Support</div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">1000+</div>
-                  <div className="text-sm text-gray-300">Projects Completed</div>
+
+                {/* Projects Completed */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300">
+                  <div className="flex flex-col items-center">
+                    <FaProjectDiagram className="w-8 h-8 text-accent mb-2" />
+                    <div className="text-3xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">1000+</div>
+                    <div className="text-sm text-gray-300">Projects Completed</div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">4.9/5</div>
-                  <div className="text-sm text-gray-300">Customer Rating</div>
+
+                {/* Customer Rating */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300">
+                  <div className="flex flex-col items-center">
+                    <FaStar className="w-8 h-8 text-primary mb-2" />
+                    <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">4.9/5</div>
+                    <div className="text-sm text-gray-300">Customer Rating</div>
+                  </div>
                 </div>
               </div>
             </motion.div>
