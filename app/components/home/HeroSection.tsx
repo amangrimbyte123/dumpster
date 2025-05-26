@@ -22,7 +22,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-4">
-        <div className="max-w-4xl text-center text-white">
+        <div className="max-w-4xl text-center text-white mt-20">
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -30,7 +30,7 @@ const HeroSection = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
+              <h1 className="mb-4 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
                 <span className="block text-primary">Professional</span>
                 Dumpster Rental Services
               </h1>

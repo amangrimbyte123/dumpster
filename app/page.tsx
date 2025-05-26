@@ -8,6 +8,8 @@ import TopLocationsSection from './components/home/TopLocationsSection';
 import HowItWorksSection from './components/home/HowItWorksSection';
 import BookSection from './components/home/BookSection';
 import FAQSection from './components/home/FAQSection';
+import ServicesSection from './components/home/ServicesSection';
+import DumpsterSizesSection from './components/home/DumpsterSizesSection';
 import { FaTruck, FaClock, FaUsers, FaRecycle, FaShieldAlt, FaHandshake } from 'react-icons/fa';
 
 interface Category {
@@ -52,6 +54,11 @@ export default function Home() {
           <CategorySection />
         </div>
 
+        {/* Services Section */}
+        <div className="bg-gradient-to-b from-background via-secondary/5 to-background">
+          <ServicesSection />
+        </div>
+
         {/* How It Works Section with primary color accents */}
         <div className="bg-gradient-to-b from-background via-primary/5 to-background">
           <HowItWorksSection />
@@ -60,6 +67,11 @@ export default function Home() {
         {/* Book Section with secondary color theme */}
         <div className="bg-gradient-to-b from-background via-secondary/10 to-background">
           <BookSection />
+        </div>
+
+        {/* Dumpster Sizes Section */}
+        <div className="bg-gradient-to-b from-background via-accent/10 to-background">
+          <DumpsterSizesSection />
         </div>
 
         {/* Top Locations Section with enhanced color theme */}
