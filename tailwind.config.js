@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#006400',
-        secondary: '#7FB17F',
+        secondary: '#6ea102',
         accent: '#8B5CF6', // Purple
         background: '#F9FAFB', // Light Gray
         'dark-background': '#111827', // Dark Slate
