@@ -18,7 +18,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-background via-secondary/5 to-background">
       {/* Hero Section with Image */}
       <div className="relative h-[400px] w-full">
         <div className="absolute inset-0">
@@ -29,7 +29,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/20" />
         </div>
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
           <Link 
@@ -47,6 +47,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             Back to Home
           </Link>
           <div className="max-w-3xl">
+            <div className="inline-block mb-4">
+              <span className="inline-block px-4 py-1 bg-white/20 text-white rounded-full text-sm font-medium">
+                {category.name}
+              </span>
+            </div>
             <h1 className="text-5xl font-bold mb-4 flex items-center text-white">
               <span className="text-4xl mr-3">{category.icon}</span>
               {category.name}
@@ -63,28 +68,28 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             <Link
               href={`/${category.slug}/${location.slug}`}
               key={location.id}
-              className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-primary/10"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="p-6 relative">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h2 className="text-2xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
+                    <h2 className="text-2xl font-semibold text-primary group-hover:text-secondary transition-colors">
                       {location.name}
                     </h2>
                     <div className="mt-2 flex items-center space-x-2">
-                      <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-medium">
+                      <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
                         {location.availableDumpsters} Available
                       </span>
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-text/70">
                         • {category.name}
                       </span>
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-6 line-clamp-2">{location.description}</p>
+                <p className="text-text/70 mb-6 line-clamp-2">{location.description}</p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-2 transition-transform">
+                  <div className="flex items-center text-secondary font-medium group-hover:translate-x-2 transition-transform">
                     View Details
                     <svg 
                       className="w-5 h-5 ml-2" 
@@ -95,9 +100,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
-                  <div className="h-8 w-8 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                  <div className="h-8 w-8 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
                     <svg 
-                      className="w-4 h-4 text-blue-600" 
+                      className="w-4 h-4 text-secondary" 
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"

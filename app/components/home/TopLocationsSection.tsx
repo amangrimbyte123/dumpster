@@ -56,7 +56,7 @@ export default function TopLocationsSection() {
 
               {/* Location Info */}
               <div className="flex-grow min-w-0">
-                <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors truncate">
+                <h3 className="text-lg font-semibold mb-1 text-primary group-hover:text-primary/80 transition-colors truncate">
                   {location.name}
                 </h3>
                 <div className="flex items-center text-text/70 mb-1 text-sm">

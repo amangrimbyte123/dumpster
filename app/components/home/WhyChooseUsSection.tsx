@@ -51,7 +51,7 @@ export default function WhyChooseUsSection() {
   return (
     <section className="relative py-20 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-white to-background" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/5 to-background" />
       
       {/* Pattern Overlay */}
       <div className="absolute inset-0 opacity-5">
@@ -67,7 +67,7 @@ export default function WhyChooseUsSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+            <span className="inline-block px-4 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
               Why Choose Us
             </span>
           </div>
@@ -94,14 +94,14 @@ export default function WhyChooseUsSection() {
 
                 {/* Content */}
                 <div className="flex-grow">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold mb-2 text-primary group-hover:text-primary/80 transition-colors">
                     {feature.title}
                   </h3>
                   <p className="text-text/70 mb-4">{feature.description}</p>
                   
                   {/* Stat */}
                   <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-primary">
+                    <span className="text-3xl font-bold text-secondary">
                       {feature.stat}
                     </span>
                     <span className="text-sm text-text/60">{feature.statLabel}</span>
@@ -116,7 +116,7 @@ export default function WhyChooseUsSection() {
         <div className="text-center mt-16">
           <div className="inline-block bg-gradient-to-r from-primary to-secondary rounded-full px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <p className="text-white font-medium">
-              Ready to get started? <a href="/contact" className="text-white hover:text-white/90 underline">Contact us</a> for a free quote
+              Ready to get started? <a href="/contact" className="text-white hover:text-white/90 underline transition-colors">Contact us</a> for a free quote
             </p>
           </div>
         </div>

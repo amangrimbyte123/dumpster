@@ -127,33 +127,38 @@ function LocationsContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-background via-secondary/5 to-background">
       <div className="container mx-auto px-4 py-12">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Find Dumpster Locations</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="inline-block mb-4">
+            <span className="inline-block px-4 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+              Find Locations
+            </span>
+          </div>
+          <h1 className="text-4xl font-bold text-primary mb-4">Find Dumpster Locations</h1>
+          <p className="text-lg text-text/80 max-w-2xl mx-auto">
             Discover available dumpster locations near you. Search by name or address to find the perfect spot for your needs.
           </p>
         </div>
         
         {/* Search Form */}
         <form onSubmit={handleSearch} className="max-w-3xl mx-auto mb-12">
-          <div className="flex gap-4 bg-white p-2 rounded-xl shadow-lg">
+          <div className="flex gap-4 bg-white/80 backdrop-blur-sm p-2 rounded-xl shadow-lg border border-primary/10">
             <div className="flex-1 flex items-center gap-2 px-4">
-              <FiSearch className="text-gray-400 text-xl" />
+              <FiSearch className="text-secondary text-xl" />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search locations by name or address..."
-                className="flex-1 p-2 outline-none text-gray-700"
+                className="flex-1 p-2 outline-none text-text/70 bg-transparent"
               />
             </div>
             <button
               type="submit"
               disabled={isSearching}
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center gap-2 disabled:opacity-50"
+              className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 flex items-center gap-2 disabled:opacity-50 shadow-lg hover:shadow-xl"
             >
               {isSearching ? (
                 <>
@@ -172,7 +177,7 @@ function LocationsContent() {
 
         {/* Results Count */}
         <div className="mb-8">
-          <p className="text-gray-600">
+          <p className="text-text/70">
             Showing {currentLocations.length} of {filteredLocations.length} locations
           </p>
         </div>
@@ -185,7 +190,7 @@ function LocationsContent() {
               href={`/${getCategorySlug(location.categoryId)}/${location.slug}`}
               className="group"
             >
-              <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-primary/10">
                 <div className="relative h-48">
                   <Image
                     src={location.imageUrl}
@@ -193,19 +198,19 @@ function LocationsContent() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-6">
-                  <h2 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+                  <h2 className="text-xl font-semibold mb-2 text-primary group-hover:text-secondary transition-colors duration-200">
                     {location.name}
                   </h2>
                   <div className="space-y-2">
-                    <p className="text-gray-600 flex items-center gap-2">
-                      <FiMapPin className="text-gray-400" />
+                    <p className="text-text/70 flex items-center gap-2">
+                      <FiMapPin className="text-secondary" />
                       {location.address}
                     </p>
-                    <p className="text-gray-600 flex items-center gap-2">
-                      <FiTruck className="text-gray-400" />
+                    <p className="text-text/70 flex items-center gap-2">
+                      <FiTruck className="text-secondary" />
                       {location.availableDumpsters} Dumpsters Available
                     </p>
                   </div>
@@ -224,8 +229,8 @@ function LocationsContent() {
                 onClick={() => handlePageChange(page)}
                 className={`px-4 py-2 rounded-lg transition-all duration-200 ${
                   currentPage === page
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                    ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-md'
+                    : 'bg-white/80 text-text/70 hover:bg-secondary/10 border border-primary/10'
                 }`}
               >
                 {page}
@@ -237,9 +242,9 @@ function LocationsContent() {
         {/* No Results Message */}
         {currentLocations.length === 0 && (
           <div className="text-center py-12">
-            <div className="text-gray-400 text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No locations found</h3>
-            <p className="text-gray-600">Try adjusting your search terms or browse all locations</p>
+            <div className="text-secondary text-6xl mb-4">🔍</div>
+            <h3 className="text-xl font-semibold text-primary mb-2">No locations found</h3>
+            <p className="text-text/70">Try adjusting your search terms or browse all locations</p>
           </div>
         )}
       </div>

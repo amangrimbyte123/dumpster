@@ -66,48 +66,75 @@ const ServicesPage = () => {
   ];
 
   return (
-    <div className="container-custom py-12">
-      <h1 className="text-4xl font-bold text-primary mb-8">Our Services</h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, index) => (
-          <div key={index} className="bg-white dark:bg-dark-card rounded-lg shadow-md p-6">
-            <h2 className="text-2xl font-semibold text-primary mb-4">{service.title}</h2>
-            <p className="text-text dark:text-gray-300 mb-4">{service.description}</p>
-            <ul className="space-y-2">
-              {service.features.map((feature, featureIndex) => (
-                <li key={featureIndex} className="flex items-center text-text dark:text-gray-300">
-                  <svg className="h-5 w-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6">
+    <div className="min-h-screen bg-gradient-to-b from-background via-secondary/5 to-background">
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="inline-block mb-4">
+              <span className="inline-block px-4 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+                Our Services
+              </span>
+            </div>
+            <h1 className="text-4xl font-bold text-primary mb-4">Comprehensive Dumpster Solutions</h1>
+            <p className="text-text/70 text-lg max-w-2xl mx-auto">
+              We offer a wide range of dumpster rental services to meet your specific needs, 
+              from construction projects to residential cleanups.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div 
+                key={index} 
+                className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-primary/10 hover:border-primary/20 transition-all duration-300"
+              >
+                <h2 className="text-2xl font-semibold text-primary mb-4">{service.title}</h2>
+                <p className="text-text/70 mb-4">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-text/70">
+                      <svg className="h-5 w-5 text-secondary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6">
+                  <Link 
+                    href="/contact" 
+                    className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-300"
+                  >
+                    Get Started
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-primary/10">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl font-semibold text-primary mb-4">Need a Custom Solution?</h2>
+              <p className="text-text/70 mb-6">
+                We understand that every project is unique. Contact us to discuss your specific requirements, 
+                and we'll create a customized waste management solution that fits your needs perfectly.
+              </p>
               <Link 
                 href="/contact" 
-                className="btn-primary inline-block"
+                className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-300"
               >
-                Get Started
+                Contact Us
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
             </div>
           </div>
-        ))}
-      </div>
-
-      <div className="mt-12 bg-primary/5 dark:bg-primary/10 rounded-lg p-8">
-        <h2 className="text-2xl font-semibold text-primary mb-4">Need a Custom Solution?</h2>
-        <p className="text-text dark:text-gray-300 mb-6">
-          We understand that every project is unique. Contact us to discuss your specific requirements, 
-          and we'll create a customized waste management solution that fits your needs perfectly.
-        </p>
-        <Link 
-          href="/contact" 
-          className="btn-primary inline-block"
-        >
-          Contact Us
-        </Link>
+        </div>
       </div>
     </div>
   );
