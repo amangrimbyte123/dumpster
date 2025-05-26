@@ -9,15 +9,31 @@ interface Location {
   name: string;
   address: string;
   slug: string;
+  categorySlug: string;
   availableDumpsters: number;
   imageUrl: string;
 }
 
 function getLocations() {
-  const filePath = path.join(process.cwd(), 'example_data', 'Locations.json');
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const data = JSON.parse(fileContents);
-  return data.locations.slice(0, 10); // Get top 10 locations
+  const locationsPath = path.join(process.cwd(), 'example_data', 'Locations.json');
+  const categoriesPath = path.join(process.cwd(), 'example_data', 'Categories.json');
+  
+  const locationsData = JSON.parse(fs.readFileSync(locationsPath, 'utf8'));
+  const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf8'));
+  
+  // Create a map of category IDs to slugs
+  const categoryMap = categoriesData.categories.reduce((acc: { [key: number]: string }, category: any) => {
+    acc[category.id] = category.slug;
+    return acc;
+  }, {});
+  
+  // Add categorySlug to each location
+  const locations = locationsData.locations.map((location: any) => ({
+    ...location,
+    categorySlug: categoryMap[location.categoryId]
+  }));
+  
+  return locations.slice(0, 10); // Get top 10 locations
 }
 
 export default function TopLocationsSection() {
@@ -72,7 +88,7 @@ export default function TopLocationsSection() {
               {/* Action Button */}
               <div className="flex-shrink-0">
                 <Link
-                  href={`/locations/${location.slug}`}
+                  href={`/${location.categorySlug}/${location.slug}`}
                   className="inline-flex items-center px-3 py-1.5 bg-primary/10 text-primary rounded-full hover:bg-primary/20 transition-colors text-sm"
                 >
                   View
@@ -91,10 +107,10 @@ export default function TopLocationsSection() {
         {/* View All Button */}
         <div className="text-center mt-8">
           <Link
-            href="/locations"
+            href="/categories"
             className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
           >
-            View All Locations
+            View All Categories
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
