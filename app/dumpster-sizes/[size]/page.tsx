@@ -90,7 +90,7 @@ const DumpsterSizePage = ({ params }: DumpsterSizePageProps) => {
           <h2 className="text-3xl font-bold text-primary mb-6">Ideal Projects for a {size}</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <h4 className="text-xl font-semibold mb-3">Residential Projects</h4>
+              <h4 className="text-xl font-semibold mb-3 text-primary">Residential Projects</h4>
               <ul className="list-disc list-inside space-y-2 text-text/70">
                 <li>Garage cleanouts</li>
                 <li>Small bathroom remodels</li>
@@ -99,7 +99,7 @@ const DumpsterSizePage = ({ params }: DumpsterSizePageProps) => {
               </ul>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <h4 className="text-xl font-semibold mb-3">Commercial Projects</h4>
+              <h4 className="text-xl font-semibold mb-3 text-primary">Commercial Projects</h4>
               <ul className="list-disc list-inside space-y-2 text-text/70">
                 <li>Office cleanouts</li>
                 <li>Small store renovations</li>
@@ -115,7 +115,7 @@ const DumpsterSizePage = ({ params }: DumpsterSizePageProps) => {
           <h2 className="text-3xl font-bold text-primary mb-6">What Can Go in a {size}?</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h4 className="text-xl font-semibold mb-4 text-green-600">Allowed Items</h4>
+              <h4 className="text-xl font-semibold mb-4 text-primary">Allowed Items</h4>
               <ul className="list-disc list-inside space-y-2 text-text/70">
                 <li>Construction debris</li>
                 <li>Household junk</li>
@@ -125,7 +125,7 @@ const DumpsterSizePage = ({ params }: DumpsterSizePageProps) => {
               </ul>
             </div>
             <div>
-              <h4 className="text-xl font-semibold mb-4 text-red-600">Restricted Items</h4>
+              <h4 className="text-xl font-semibold mb-4 text-primary">Restricted Items</h4>
               <ul className="list-disc list-inside space-y-2 text-text/70">
                 <li>Hazardous materials</li>
                 <li>Electronics</li>
@@ -159,15 +159,15 @@ const DumpsterSizePage = ({ params }: DumpsterSizePageProps) => {
           <h2 className="text-3xl font-bold text-primary mb-6">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <h3 className="text-xl font-semibold mb-3">Step 1: Book Online</h3>
+              <h3 className="text-xl font-semibold mb-3 text-primary">Step 1: Book Online</h3>
               <p className="text-text/70">Fill out our simple online form or call us to schedule your delivery.</p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <h3 className="text-xl font-semibold mb-3">Step 2: Delivery</h3>
+              <h3 className="text-xl font-semibold mb-3 text-primary">Step 2: Delivery</h3>
               <p className="text-text/70">We'll deliver your dumpster to your specified location at the scheduled time.</p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <h3 className="text-xl font-semibold mb-3">Step 3: Pickup</h3>
+              <h3 className="text-xl font-semibold mb-3 text-primary">Step 3: Pickup</h3>
               <p className="text-text/70">When you're done, we'll pick up the dumpster and handle proper disposal.</p>
             </div>
           </div>
