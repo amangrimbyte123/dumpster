@@ -8,6 +8,8 @@ export interface DumpsterSizeConfig {
   weightLimit: string;
   typicalDuration: string;
   priceRange: string;
+  image: string;
+  imageAlt: string;
 }
 
 export const dumpsterSizes: Record<string, DumpsterSizeConfig> = {
@@ -20,7 +22,9 @@ export const dumpsterSizes: Record<string, DumpsterSizeConfig> = {
     capacity: '3-4 pickup truck loads',
     weightLimit: '2 tons',
     typicalDuration: '7-14 days',
-    priceRange: '$300-$400'
+    priceRange: '$300-$400',
+    image: '/dumpster-10-yard.jpg',
+    imageAlt: 'A small 10-yard dumpster used for home cleanout projects.'
   },
   '20-yard': {
     dimensions: {
@@ -31,7 +35,9 @@ export const dumpsterSizes: Record<string, DumpsterSizeConfig> = {
     capacity: '6-8 pickup truck loads',
     weightLimit: '4 tons',
     typicalDuration: '7-14 days',
-    priceRange: '$400-$500'
+    priceRange: '$400-$500',
+    image: '/dumpster-yard.jpg',
+    imageAlt: 'A 20-yard dumpster placed in a residential yard for renovation debris.'
   },
   '30-yard': {
     dimensions: {
@@ -42,7 +48,9 @@ export const dumpsterSizes: Record<string, DumpsterSizeConfig> = {
     capacity: '9-12 pickup truck loads',
     weightLimit: '6 tons',
     typicalDuration: '7-14 days',
-    priceRange: '$500-$600'
+    priceRange: '$500-$600',
+    image: '/dumpster-construction.jpg',
+    imageAlt: 'A large 30-yard dumpster at a construction site.'
   },
   '40-yard': {
     dimensions: {
@@ -53,6 +61,8 @@ export const dumpsterSizes: Record<string, DumpsterSizeConfig> = {
     capacity: '12-16 pickup truck loads',
     weightLimit: '8 tons',
     typicalDuration: '7-14 days',
-    priceRange: '$600-$700'
+    priceRange: '$600-$700',
+    image: '/dumpster-industrial.jpg',
+    imageAlt: 'A 40-yard industrial dumpster for major cleanouts and commercial use.'
   }
 }; 
