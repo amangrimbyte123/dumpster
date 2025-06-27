@@ -2,14 +2,49 @@
 
 import { useState } from 'react';
 import { FaSearch, FaMapMarkerAlt } from 'react-icons/fa';
+import { useCities, City } from '@/app/hooks/useCities';
+import { useServices } from '@/app/hooks/useServices';
+import Link from 'next/link';
+
+// Helper to highlight matching part of city name
+function highlightMatch(name: string, query: string) {
+  if (!query) return name;
+  const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'ig');
+  return name.split(regex).map((part, i) =>
+    regex.test(part) ? (
+      <span key={i} className="bg-yellow-300 text-black font-bold rounded px-1">{part}</span>
+    ) : (
+      <span key={i}>{part}</span>
+    )
+  );
+}
+
+// Helper to remove duplicate city names
+function dedupeCitiesByName(cities: City[]) {
+  const seen = new Set();
+  return cities.filter(city => {
+    if (seen.has(city.name.toLowerCase())) return false;
+    seen.add(city.name.toLowerCase());
+    return true;
+  });
+}
 
 export default function BookSection() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [results, setResults] = useState<City[]>([]);
+  const [searchSubmitted, setSearchSubmitted] = useState(false);
+  const { findCities, loading } = useCities();
+  const { services } = useServices();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle search logic here
-    console.log('Searching for:', searchQuery);
+    setSearchSubmitted(true);
+    if (!searchQuery.trim()) {
+      setResults([]);
+      return;
+    }
+    const found = findCities(searchQuery);
+    setResults(found);
   };
 
   return (
@@ -39,7 +74,10 @@ export default function BookSection() {
               <input
                 type="text"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setSearchSubmitted(false);
+                }}
                 placeholder="Enter your location or ZIP code"
                 className="w-full pl-12 pr-4 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent backdrop-blur-sm transition-all duration-300"
               />
@@ -53,6 +91,41 @@ export default function BookSection() {
             </button>
           </form>
         </div>
+
+        {/* Search Results */}
+        {searchSubmitted && (
+          <div className="max-w-2xl mx-auto mt-6 bg-yellow-400/20 border-2 border-yellow-400 rounded-xl p-4 text-white shadow-lg animate-fade-in">
+            {loading ? (
+              <div>Loading...</div>
+            ) : dedupeCitiesByName(results).length === 0 ? (
+              <div>No locations found for "{searchQuery}".</div>
+            ) : (
+              <ul>
+                {dedupeCitiesByName(results).map((city) => {
+                  const service = services.find(s => s.id === city.service_id);
+                  const href = service ? `/${service.slug}/${city.slug}` : undefined;
+                  return (
+                    <li key={city.id} className="py-2 border-b border-white/10 last:border-b-0 bg-yellow-400/10 hover:bg-yellow-400/30 rounded transition-colors duration-200">
+                      {href ? (
+                        <Link href={href} className="text-primary underline hover:text-secondary">
+                          <span className="font-semibold">{highlightMatch(city.name, searchQuery)}</span>
+                          {city.zipe_code && (
+                            <span className="ml-2 text-white/70">({city.zipe_code})</span>
+                          )}
+                        </Link>
+                      ) : (
+                        <span className="font-semibold">{highlightMatch(city.name, searchQuery)}</span>
+                      )}
+                      {(!href && city.zipe_code) && (
+                        <span className="ml-2 text-white/70">({city.zipe_code})</span>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </div>
+        )}
 
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">

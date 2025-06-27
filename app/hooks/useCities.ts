@@ -8,6 +8,7 @@ export interface City {
   slug: string;
   description?: string;
   image?: string;
+  zipe_code?: string;
 }
 
 export function useCities() {
@@ -25,7 +26,13 @@ export function useCities() {
         setError(error.message);
         setCities([]);
       } else {
-        setCities((data as City[]) || []);
+        // Set default image if image is null or undefined
+        const updatedCities = (data as City[]).map(city => ({
+          ...city,
+          image: city.image ?? '/city_semple_image.jpg',
+        }));
+        setCities(updatedCities || []);
+        console.log('Loaded cities:', updatedCities);
         setError(null);
       }
       setLoading(false);
@@ -33,5 +40,14 @@ export function useCities() {
     fetchCities();
   }, []);
 
-  return { cities, loading, error };
+  // Add filter function for name or zip code
+  const findCities = (search: string) => {
+    const lowerSearch = search.toLowerCase();
+    return cities.filter(city =>
+      city.name.toLowerCase().includes(lowerSearch) ||
+      (city.zipe_code?.toLowerCase().includes(lowerSearch) ?? false)
+    );
+  };
+
+  return { cities, loading, error, findCities };
 } 

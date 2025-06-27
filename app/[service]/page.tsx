@@ -5,22 +5,27 @@ import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { useServices } from '../hooks/useServices';
 import { useCities } from '../hooks/useCities';
-import HeroImage from '../components/HeroImage';
+import { usePlaceBasic } from '../hooks/usePlaceBasic';
 import React from 'react';
+import FAQSection from '../components/home/FAQSection';
+import HowItWorksSection from '../components/home/HowItWorksSection';
+import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
+import BookSection from '../components/home/BookSection';
 
 const ServiceDetailPage = () => {
   const params = useParams();
   const { services, loading: loadingServices, error: errorServices } = useServices();
   const { cities, loading: loadingCities, error: errorCities } = useCities();
+  const { places, loading: loadingPlaces, error: errorPlaces } = usePlaceBasic();
 
   const service = services.find(s => s.slug === params?.service);
   const serviceCities = cities.filter(city => city.service_id === service?.id);
 
-  if (loadingServices || loadingCities) {
+  if (loadingServices || loadingCities || loadingPlaces) {
     return <div className="text-center text-lg text-primary my-12">Loading...</div>;
   }
-  if (errorServices || errorCities) {
-    return <div className="text-center text-lg text-red-500 my-12">{errorServices || errorCities}</div>;
+  if (errorServices || errorCities || errorPlaces) {
+    return <div className="text-center text-lg text-red-500 my-12">{errorServices || errorCities || errorPlaces}</div>;
   }
   if (!service) {
     return <div className="text-center text-lg text-red-500 my-12">Service not found.</div>;
@@ -80,54 +85,65 @@ const ServiceDetailPage = () => {
         {serviceCities.length === 0 ? (
           <div className="text-text/60">No cities available for this service.</div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceCities.map((city) => (
-              <Link
-                href={`/${service.slug}/${city.slug}`}
-                key={city.id}
-                className="group relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-primary/10"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="p-6 relative">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h2 className="text-2xl font-semibold text-primary group-hover:text-secondary transition-colors">
-                        {city.name}
-                      </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+            {serviceCities.map((city, index) => {
+              const place = places.find((p) => p.city_id === city.id);
+              return (
+                <div
+                  key={city.id}
+                  className="group relative flex items-center gap-4 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+                >
+                  {/* Location Number */}
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-lg">
+                    {index + 1}
+                  </div>
+                  {/* Location Image */}
+                  <div className="flex-shrink-0 w-20 h-20 relative rounded-lg overflow-hidden">
+                    <Image
+                      src={city.image || '/city_semple_image.jpg'}
+                      alt={city.name}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  {/* Location Info */}
+                  <div className="flex-grow min-w-0">
+                    <h3 className="text-lg font-semibold mb-1 text-primary group-hover:text-primary/80 transition-colors truncate">
+                      {city.name}
+                    </h3>
+                    <div className="flex items-center text-text/70 mb-1 text-sm">
+                      <svg className="mr-2 text-secondary flex-shrink-0" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                      <span className="truncate">{place?.address || 'No address available'}</span>
                     </div>
                   </div>
-                  {city.description && (
-                    <p className="text-text/70 mb-6 line-clamp-2">{city.description}</p>
-                  )}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-secondary font-medium group-hover:translate-x-2 transition-transform">
-                      View Details
-                      <svg 
-                        className="w-5 h-5 ml-2" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
+                  {/* Action Button */}
+                  <div className="flex-shrink-0">
+                    <Link
+                      href={`/${service.slug}/${city.slug}`}
+                      className="inline-flex items-center px-3 py-1.5 bg-primary/10 text-primary rounded-full hover:bg-primary/20 transition-colors text-sm"
+                    >
+                      View
+                      <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </div>
-                    <div className="h-8 w-8 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
-                      <svg 
-                        className="w-4 h-4 text-secondary" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
+                    </Link>
                   </div>
+                  {/* Hover Effect Line */}
+                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-300"></div>
                 </div>
-              </Link>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>
+      {/* How It Works Section */}
+      <HowItWorksSection />
+      {/* Why Choose Us Section */}
+      <WhyChooseUsSection />
+      {/* Book/Call to Action Section */}
+      <BookSection />
+      {/* FAQ Section */}
+      <FAQSection />
     </div>
   );
 };
