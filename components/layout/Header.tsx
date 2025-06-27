@@ -31,9 +31,6 @@ const Header = () => {
           <Link href="/" className="text-text hover:text-primary transition-colors">
             Home
           </Link>
-          <Link href="/categories" className="text-text hover:text-primary transition-colors">
-            Categories
-          </Link>
           <Link href="/locations" className="text-text hover:text-primary transition-colors">
             Locations
           </Link>
@@ -78,20 +75,13 @@ const Header = () => {
           animate={{ opacity: 1, height: 'auto' }}
           transition={{ duration: 0.3 }}
         >
-          <div className="container-custom py-4 flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 p-4">
             <Link 
               href="/" 
               className="text-text hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
-            </Link>
-            <Link 
-              href="/category" 
-              className="text-text hover:text-primary transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Categories
             </Link>
             <Link 
               href="/location" 

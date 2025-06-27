@@ -4,6 +4,10 @@ import React from 'react';
 import { dumpsterSizes } from '../config';
 import Link from 'next/link';
 import Image from 'next/image';
+import ServicesSection from '../../components/home/ServicesSection';
+import DumpsterSizesSection from '../../components/home/DumpsterSizesSection';
+import WhyChooseUsSection from '../../components/home/WhyChooseUsSection';
+import FAQSection from '../../components/home/FAQSection';
 
 interface DumpsterSizePageProps {
   params: {
@@ -515,92 +519,9 @@ const DumpsterSizePage = ({ params }: DumpsterSizePageProps) => {
           </div>
         </section>
 
-        {/* Enhanced Use Cases Section */}
-        <section className="mb-20 bg-gradient-to-br from-secondary/5 via-white to-accent/5 rounded-3xl p-12">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-text mb-4">Perfect For Your Project</h2>
-            <p className="text-text/70 max-w-2xl mx-auto">Discover how our {size} dumpster can handle your specific project needs with professional efficiency</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-white to-primary/5 rounded-2xl p-8 shadow-xl border border-primary/10 hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-.707.707a1 1 0 001.414 1.414L10 4.414l.707-.707a1 1 0 00-1.414-1.414zM3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0L10 5.586l2.293-2.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L13.586 7H12a1 1 0 100 2h4a1 1 0 011-1v4a1 1 0 11-2 0V8.414l-2.293 2.293a1 1 0 01-1.414 0L10 9.414l-.707.707a1 1 0 01-1.414-1.414L8.586 8H7a1 1 0 00-1 1v4a1 1 0 11-2 0V9a1 1 0 011-1h1.586l2.293-2.293z"/>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-text">Residential Projects</h3>
-              </div>
-              
-              {/* Residential Project Image */}
-              <div className="relative h-48 rounded-xl overflow-hidden mb-6 shadow-lg">
-                <Image
-                  src={params.size === '10-yard' ? '/Residential-Projects-10-yard.jpg' : 
-                       params.size === '20-yard' ? '/dumpster-medium-project.jpg' :
-                       params.size === '30-yard' ? '/dumpster-large-project.jpg' : '/dumpster-major-project.jpg'}
-                  alt="Residential dumpster project"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  className="rounded-xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                <div className="absolute bottom-3 left-3">
-                  <p className="text-white text-sm font-medium">Residential Use</p>
-                </div>
-              </div>
-              
-              <ul className="space-y-3">
-                {useCases.residential.map((item, index) => (
-                  <li key={index} className="flex items-center text-text/70 hover:text-text transition-colors">
-                    <svg className="w-4 h-4 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div className="bg-gradient-to-br from-white to-secondary/5 rounded-2xl p-8 shadow-xl border border-secondary/10 hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-xl flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-text">Commercial Projects</h3>
-              </div>
-              
-              {/* Commercial Project Image */}
-              <div className="relative h-48 rounded-xl overflow-hidden mb-6 shadow-lg">
-                <Image
-                  src={params.size === '10-yard' ? '/commercial-Projects-10-yard.jpg' : 
-                       params.size === '20-yard' ? '/dumpster-medium-project.jpg' :
-                       params.size === '30-yard' ? '/dumpster-large-project.jpg' : '/dumpster-major-project.jpg'}
-                  alt="Commercial dumpster project"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  className="rounded-xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                <div className="absolute bottom-3 left-3">
-                  <p className="text-white text-sm font-medium">Commercial Use</p>
-                </div>
-              </div>
-              
-              <ul className="space-y-3">
-                {useCases.commercial.map((item, index) => (
-                  <li key={index} className="flex items-center text-text/70 hover:text-text transition-colors">
-                    <svg className="w-4 h-4 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+        <div className="bg-gradient-to-b from-background via-secondary/5 to-background">
+          <ServicesSection />
+        </div>
 
         {/* Enhanced Allowed Items Section */}
         <section className="mb-20 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-12">

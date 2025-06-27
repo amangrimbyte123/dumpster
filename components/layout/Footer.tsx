@@ -75,22 +75,6 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold text-primary mb-4">Categories</h3>
-            <ul className="space-y-2">
-              {categories.map((category) => (
-                <li key={category.id}>
-                  <Link 
-                    href={`/${category.slug}`} 
-                    className="text-text dark:text-gray-300 hover:text-primary transition-colors"
-                  >
-                    {category.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
             <h3 className="text-lg font-semibold text-primary mb-4">Subscribe</h3>
             <p className="text-text dark:text-gray-300 mb-4">
               Stay updated with our latest listings and news.

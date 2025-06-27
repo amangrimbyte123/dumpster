@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import HeroSection from './components/home/HeroSection';
-import CategorySection from './components/home/CategorySection';
 import BusinessSection from './components/home/BusinessSection';
 import WhyChooseUsSection from './components/home/WhyChooseUsSection';
 import TopLocationsSection from './components/home/TopLocationsSection';
@@ -10,16 +9,6 @@ import BookSection from './components/home/BookSection';
 import FAQSection from './components/home/FAQSection';
 import ServicesSection from './components/home/ServicesSection';
 import DumpsterSizesSection from './components/home/DumpsterSizesSection';
-import { FaTruck, FaClock, FaUsers, FaRecycle, FaShieldAlt, FaHandshake } from 'react-icons/fa';
-
-interface Category {
-  id: number;
-  name: string;
-  description: string;
-  icon: string;
-  slug: string;
-  imageUrl: string;
-}
 
 interface Location {
   id: number;
@@ -49,11 +38,6 @@ export default function Home() {
 
       {/* Main Content Sections */}
       <div className="relative z-10">
-        {/* Category Section with accent background */}
-        <div className="bg-gradient-to-b from-background via-accent/5 to-background">
-          <CategorySection />
-        </div>
-
         {/* Services Section */}
         <div className="bg-gradient-to-b from-background via-secondary/5 to-background">
           <ServicesSection />

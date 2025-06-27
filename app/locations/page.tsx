@@ -5,6 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { FiSearch, FiMapPin, FiTruck } from 'react-icons/fi';
+import BookSection from '../components/home/BookSection';
+import ServicesSection from '../components/home/ServicesSection';
+import DumpsterSizesSection from '../components/home/DumpsterSizesSection';
+import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
+import FAQSection from '../components/home/FAQSection';
 
 interface Location {
   id: number;
@@ -32,7 +37,15 @@ export default function LocationsPage() {
         </div>
       </div>
     }>
+      {/* Book CTA Section */}
+      <BookSection />
       <LocationsContent />
+      {/* How It Works and Dumpster Sizes after main content */}
+      <ServicesSection />
+      <DumpsterSizesSection />
+      {/* Why Choose Us and FAQ at the bottom */}
+      <WhyChooseUsSection />
+      <FAQSection />
     </Suspense>
   );
 }
